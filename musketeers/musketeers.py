@@ -79,13 +79,25 @@ class Musketeers (object):
 
 						raise Exception('Required parameter \'%s\' not defined.' % (parameter))
 
+				if self.verifySSL is None and 'verify_ssl' not in definition:
+
+					verifySSL = True
+
+				elif self.verifySSL is None and 'verify_ssl' in definition:
+
+					verifySSL = definition['verify_ssl']
+
+				else:
+
+					verifySSL = self.verifySSL					
+
 				return getattr(requests, method)('/'.join([definition['api_root'], path]),
 											     params=params,
 											     data=form,
 											     files = files,
 											     headers = headers,
-											     verify = (self.verifySSL or definition['verify_ssl']))
-
+											     verify = verifySSL)
+				
 		except IOError:
 
 			raise Exception("Specification '" + self.specs_dir + "/" + spec + "' missing")

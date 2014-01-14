@@ -1,6 +1,7 @@
 {
     "name": "httpbin",
     "api_root": "https://httpbin.org",
+    "verify_ssl": true,
     "resources": [
         {
             "path": "get",
