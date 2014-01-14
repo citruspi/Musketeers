@@ -78,6 +78,52 @@ def test_post_verb():
 
 	assert(response['form']['name'] == "Bruce Wayne")
 
+def test_delete_verb():
+
+	client = Musketeers(specs='tests')
+	client.use("httpbin")
+
+	response = client.delete("delete").json()
+
+	assert(response['url'] == "http://httpbin.org/delete")
+
+
+def test_patch_verb():
+
+	client = Musketeers(specs='tests')
+	client.use("httpbin")
+
+	response = client.patch("patch").json()
+
+	assert(response['url'] == "http://httpbin.org/patch")
+
+def test_head_verb():
+
+	client = Musketeers(specs='tests')
+	client.use("httpbin")
+
+	response = client.head("headers").headers
+
+	assert(response['content-type'] == "application/json")	
+
+def test_options_verb():
+
+	client = Musketeers(specs='tests')
+	client.use("httpbin")
+
+	response = client.options("").headers
+
+	assert('allow' in response)	
+
+def test_put_verb():
+
+	client = Musketeers(specs='tests')
+	client.use("httpbin")
+
+	response = client.put("put").json()
+
+	assert(response['url'] == "http://httpbin.org/put")
+
 def test_direct_process_call():
 
 	client = Musketeers(specs='tests')
