@@ -4,6 +4,9 @@ python:
   - 2.7
   - 3.2
   - 3.3
-script: nosetests run_tests.py
+script: nosetests --with-coverage --cover-package=musketeers run_tests.py
 install:
   - pip install requests
+  - pip install coveralls
+after_succes:
+  coveralls
