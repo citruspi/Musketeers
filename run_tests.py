@@ -3,7 +3,7 @@ from musketeers import Musketeers
 
 def test_get_verb():
 
-	client = Musketeers()
+	client = Musketeers(specs='tests')
 	client.use("httpbin")
 
 	params = {
@@ -17,7 +17,7 @@ def test_get_verb():
 
 def test_post_verb():
 
-	client = Musketeers()
+	client = Musketeers(specs='tests')
 	client.use("httpbin")
 
 	form = {

@@ -4,6 +4,6 @@ python:
   - 2.7
   - 3.2
   - 3.3
-script: nosetests tests.py
+script: nosetests run_tests.py
 install:
   - pip install requests
