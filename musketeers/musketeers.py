@@ -53,6 +53,10 @@ class Musketeers (object):
 
 		try:
 
+			if spec is None:
+
+				spec = self.active_spec
+
 			with open('/'.join([self.specs_dir, spec])+'.json', 'r') as spec:
 
 				definition = json.loads(spec.read())
@@ -104,56 +108,28 @@ class Musketeers (object):
 
 	def get (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		if spec is None:
-
-			spec = self.active_spec
-
 		return self.process('get', path, params, form, files, headers, spec)
 
 	def options (self, path, params=None, form=None, files=None, headers=None, spec=None):
-
-		if spec is None:
-
-			spec = self.active_spec
 
 		return self.process('options', path, params, form, files, headers, spec)		
 
 	def head (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		if spec is None:
-
-			spec = self.active_spec
-
 		return self.process('head', path, params, form, files, headers, spec)		
 
 	def post (self, path, params=None, form=None, files=None, headers=None, spec=None):
-
-		if spec is None:
-
-			spec = self.active_spec
 
 		return self.process('post', path, params, form, files, headers, spec)
 
 	def put (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		if spec is None:
-
-			spec = self.active_spec
-
 		return self.process('put', path, params, form, files, headers, spec)
 
 	def patch (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		if spec is None:
-
-			spec = self.active_spec
-
-		return self.process('put', path, params, form, files, headers, spec)		
+		return self.process('put', path, params, form, files, headers)		
 
 	def delete (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		if spec is None:
-
-			spec = self.active_spec
-
-		return self.process('delete', path, params, spec)						
+		return self.process('delete', path, params, form, files, headers)		
