@@ -49,7 +49,7 @@ class Musketeers (object):
 
 			raise Exception("Specification '" + self.specs_dir + "/" + spec + "' missing")
 
-	def process (self, method, path, params, form, files, headers, spec):
+	def process (self, method, path, params=None, form=None, files=None, headers=None, spec=None):
 
 		try:
 
@@ -97,7 +97,7 @@ class Musketeers (object):
 											     files = files,
 											     headers = headers,
 											     verify = verifySSL)
-				
+
 		except IOError:
 
 			raise Exception("Specification '" + self.specs_dir + "/" + spec + "' missing")
