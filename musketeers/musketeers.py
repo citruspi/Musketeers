@@ -128,7 +128,7 @@ class Musketeers (object):
 
 	def patch (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
-		return self.process('put', path, params, form, files, headers)		
+		return self.process('patch', path, params, form, files, headers)		
 
 	def delete (self, path, params=None, form=None, files=None, headers=None, spec=None):
 
