@@ -4,3 +4,4 @@
 playground.py
 build/
 dist/
+.coverage
