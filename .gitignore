@@ -2,3 +2,5 @@
 *.pyc
 .DS_Store
 playground.py
+build/
+dist/
