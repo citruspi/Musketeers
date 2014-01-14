@@ -4,6 +4,13 @@
     "verify_ssl": true,
     "resources": [
         {
+            "path": "",
+            "methods": [ "head", "options", "get", "options" ],
+            "params": {
+                
+            }
+        },
+        {
             "path": "get",
             "methods": [ "get" ],
             "params" : {
@@ -30,6 +37,27 @@
             "params" : {
 
             }
-        }      
+        },
+        {
+            "path": "patch",
+            "methods": [ "patch" ],
+            "params" : {
+
+            }
+        },
+        {
+            "path": "headers",
+            "methods": [ "head" ],
+            "params" : {
+
+            }
+        },
+        {
+            "path": "put",
+            "methods": [ "put" ],
+            "params" : {
+
+            }
+        }
     ]
 }
