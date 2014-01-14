@@ -51,13 +51,6 @@
             "params" : {
 
             }
-        },
-        {
-            "path": "put",
-            "methods": [ "put" ],
-            "params" : {
-
-            }
         }
     ]
 }
