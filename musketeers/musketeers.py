@@ -34,7 +34,7 @@ except ImportError as e:
 
 class Musketeers (object):
 
-	def __init__ (self, verifySSL = True, specs='.muskateers'):
+	def __init__ (self, verifySSL = None, specs='.musketeers'):
 
 		self.verifySSL = verifySSL
 		self.specs_dir = specs
@@ -84,7 +84,7 @@ class Musketeers (object):
 											     data=form,
 											     files = files,
 											     headers = headers,
-											     verify = self.verifySSL)					  									
+											     verify = (self.verifySSL or definition['verify_ssl']))
 
 		except IOError:
 
