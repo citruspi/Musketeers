@@ -41,7 +41,7 @@ class Musketeers (object):
 
 	def use (self, spec):
 
-		if os.path.exists(self.specs_dir + '/' + spec + '.json'):
+		if os.path.exists(self.specs_dir + '/' + spec + '.yml'):
 
 			self.active_spec = spec
 
