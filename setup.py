@@ -17,7 +17,8 @@ setup(
     description='All for one, one for all!',
     long_description=long_description,
     install_requires=[
-                        'requests'
+                        'requests',
+                        'pyyaml'
                      ],
     classifiers=[
                     'Development Status :: 3 - Alpha',

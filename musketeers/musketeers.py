@@ -24,7 +24,7 @@
 
 try:
 
-	import json
+	import yaml
 	import os
 	import requests
 
@@ -57,9 +57,9 @@ class Musketeers (object):
 
 				spec = self.active_spec
 
-			with open('/'.join([self.specs_dir, spec])+'.json', 'r') as spec:
+			with open('/'.join([self.specs_dir, spec])+'.yml', 'r') as spec:
 
-				definition = json.loads(spec.read())
+				definition = yaml.safe_load(spec)
 				resource = None
 
 				for r in definition['resources']:

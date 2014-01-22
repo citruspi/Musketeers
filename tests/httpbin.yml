@@ -1,0 +1,44 @@
+---
+  name: "httpbin"
+  api_root: "https://httpbin.org"
+  verify_ssl: true
+  resources: 
+    - 
+      path: ""
+      methods: 
+        - "head"
+        - "options"
+        - "get"
+        - "options"
+      params: {}
+    - 
+      path: "get"
+      methods: 
+        - "get"
+      params: 
+        age: "required"
+    - 
+      path: "post"
+      methods: 
+        - "post"
+      params: {}
+    - 
+      path: "put"
+      methods: 
+        - "put"
+      params: {}
+    - 
+      path: "delete"
+      methods: 
+        - "delete"
+      params: {}
+    - 
+      path: "patch"
+      methods: 
+        - "patch"
+      params: {}
+    - 
+      path: "headers"
+      methods: 
+        - "head"
+      params: {}
